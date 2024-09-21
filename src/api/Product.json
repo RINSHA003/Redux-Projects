@@ -1,0 +1,25 @@
+[
+    {
+        "id" : 1,
+        "name" : "samsungs20",
+        "disciption": "Good Quality",
+        "Price": "35,000",
+        "img_url":"https://images.samsung.com/is/image/samsung/p6pim/in/sm-a156elbnins/gallery/in-galaxy-a15-5g-sm-a156-sm-a156elbnins-thumb-539414294"
+    },
+    {
+        "id" : 2,
+        "name" : "samsungs23",
+        "disciption": "Good Quality",
+        "Price": "39,000",
+        "img_url":"https://images.samsung.com/is/image/samsung/p6pim/in/sm-a156elbnins/gallery/in-galaxy-a15-5g-sm-a156-sm-a156elbnins-thumb-539414294"
+    },
+    {
+        "id":3,
+        "name" : "samsungs21",
+        "disciption": "Good Quality",
+        "Price": "30,000",
+        "img_url":"https://images.samsung.com/is/image/samsung/p6pim/in/sm-a156elbnins/gallery/in-galaxy-a15-5g-sm-a156-sm-a156elbnins-thumb-539414294"
+
+    }
+    
+]

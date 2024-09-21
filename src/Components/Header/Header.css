@@ -1,0 +1,35 @@
+header {
+    background-color: rgb(95, 95, 138);
+    padding: 10px;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .cart-count-header {
+    background-color: rgb(185, 79, 125);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 12px;
+    position: absolute; 
+    top: -8px; 
+    right: -5px;
+}
+
+header .custom-icon {
+    width: 25px;
+    height: 25px;
+}
+
+header .right-section {
+    position: relative; 
+    display: inline-block;
+}
