@@ -1,4 +1,10 @@
-import {createSlice} from '@reduxjs/toolkit'
+import {createSlice,createAsyncThunk} from '@reduxjs/toolkit'
+import axios from 'axios'
+
+const fetchUser=createAsyncThunk("cart/fetchUser",async()=>{
+    const responce= await axios.get("https://jsonplaceholder.typicode.com/users")
+    return responce
+})
 
 
 const INITIAL_STATE={
