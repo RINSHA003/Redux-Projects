@@ -1,10 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-export const fetchUser = createAsyncThunk("cart/fetchUser", async (id) => {
-    const response = await axios.get(`https://jsonplaceholder.org/posts/${id}`);
-    return response.data;
-});
+// export const fetchUser = createAsyncThunk("cart/fetchUser", async (id) => {
+//     const response = await axios.get(`https://jsonplaceholder.org/posts/${id}`);
+//     return response.data;
+// });
 
 const INITIAL_STATE = {
     cartList: [],
@@ -16,6 +16,10 @@ const cartSlice = createSlice({
     name: 'cart',
     initialState: INITIAL_STATE,
     reducers: {
+
+        updateUser:(state,action)=>{
+        state.userDetail.push(action.payload)
+        },
         addToCart: (state, action) => {
             const itemExist = state.cartList.find((item) => item.id == action.payload.id);
             if (itemExist) {
@@ -47,23 +51,23 @@ const cartSlice = createSlice({
             state.cartCount = state.cartList.reduce((total, item) => total + item.count, 0);
         }
     },
-    extraReducers: (builder) => {
-        builder
-            .addCase(fetchUser.pending, (state) => {
-                console.log('loading true');
-            })
-            .addCase(fetchUser.fulfilled, (state, action) => {
-                console.log('success');
-                console.log(action)
-                state.userDetail.push(action.payload)
+    // extraReducers: (builder) => {
+    //     builder
+    //         .addCase(fetchUser.pending, (state) => {
+    //             console.log('loading true');
+    //         })
+    //         .addCase(fetchUser.fulfilled, (state, action) => {
+    //             console.log('success');
+    //             console.log(action)
+    //             state.userDetail.push(action.payload)
                 
-            })
-            .addCase(fetchUser.rejected, (state) => {
-                console.log('end');
-            });
-    },
+    //         })
+    //         .addCase(fetchUser.rejected, (state) => {
+    //             console.log('end');
+    //         });
+    // },
 });
 
-export const { incrementCount, decrementCount, addToCart } = cartSlice.actions;
+export const { incrementCount, decrementCount, addToCart ,updateUser} = cartSlice.actions;
 
 export default cartSlice.reducer;

@@ -6,7 +6,8 @@ import './index.css'
 // import ProductList from './Components/ProductList/ProductList'
 import {ProductList,Header} from './Components'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchUser } from './Redux/CartSlice'
+import {  updateUser } from './Redux/CartSlice'
+import axios from 'axios'
 // import CompB from './Components/CompB'
 
 
@@ -15,16 +16,21 @@ import { fetchUser } from './Redux/CartSlice'
 
 function App() {
 
+    const fetchUser =  async (id) => {
+    const response = await axios.get(`https://jsonplaceholder.org/posts/${id}`);
+    dispatch(updateUser( response.data))
+};
+
 
   const dispatch=useDispatch()
   const counterRef=useRef(1)
   const {userDetail}=useSelector((state)=>state.cart)
   useEffect(()=>{
-        dispatch(fetchUser(counterRef.current))
+        fetchUser(counterRef.current)
   },[])
 
   const adduser=()=>{
-    dispatch(fetchUser(++counterRef.current))
+    fetchUser(++counterRef.current)
   }
   // const welcome='welcome to the context api'
 
